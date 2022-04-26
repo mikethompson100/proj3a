@@ -74,15 +74,12 @@ const getAmount = (e) => {
           Please click on two currency buttons to convert the first into the second one. Enter a money amount below (optional).<br/>
           $<input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount} /> - <button onClick={togglePages}>CONVERT</button>
 
-          <DisplayButtons anyButtonClick={anyButtonClick} />
-
-          
-
-            <div className="dashboard">
+          <div className="dashboard">
                 <div className="choice1">CHOICE 1 SELECTED: {currency1Code}</div>
                 <div className="choice2">CHOICE 2 SELECTED: {currency2Code}</div>
                 <div className="amount">MONETARY AMOUNT CHOSEN: ${requestedAmount}</div>
             </div>          
+          <DisplayButtons anyButtonClick={anyButtonClick} />
 
           <button onClick={clearValues}>CLEAR VALUES</button>
           </div>
