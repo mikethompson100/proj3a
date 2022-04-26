@@ -10,6 +10,7 @@ function App() {
   const [currency2Code, setCurrency2Code] = useState("")
   const [currency1Object, setCurrency1Object] = useState([])  
   const [currency2Object, setCurrency2Object] = useState([])
+  const [requestedAmount, setRequestedAmount] = useState(1)
   const [togglePage, setTogglePage] = useState(true)
 
   async function anyButtonClick(e) {  
@@ -36,6 +37,7 @@ const clearValues = () => {
   setCurrency2Code("")
   setCurrency1Object([])
   setCurrency2Object([])
+  setRequestedAmount(1)
 }
 
 const togglePages = () => {
@@ -59,11 +61,19 @@ const goBack = () => {
   clearValues()
 }
 
+const getAmount = (e) => {
+  const amount = e.target.value
+  console.log(amount)
+  setRequestedAmount(amount)
+}
+
   return (
     <div>            
       {
         togglePage ? (
           <div>
+          Please click on two currency buttons to convert the first into the second one. Enter a money amount below (optional).<br/>
+          <input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount}/>
           <DisplayButtons anyButtonClick={anyButtonClick} />
           <button onClick={clearValues}>CLEAR VALUES</button>
           <button onClick={togglePages}>CONVERT</button>
@@ -71,7 +81,7 @@ const goBack = () => {
         )
         :
         (          
-          {/* <ShowConversion currency1={currency1} currency2={currency2} goBack={goBack} /> */}
+          <ShowConversion requestedAmount={requestedAmount} currency1Object={currency1Object} currency2Object={currency2Object} currency1Code={currency1Code} currency2Code={currency2Code} goBack={goBack} /> 
         )
       }
     </div>
