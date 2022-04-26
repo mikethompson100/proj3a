@@ -41,19 +41,20 @@ const clearValues = () => {
 }
 
 const togglePages = () => {
-  if ((currency1Code == "") && (currency2Code == "")) {
+  if ((currency1Code == "") && (currency2Code == "") ) {
     alert("Please click on two currencies.")
   }
-  else {
-      if (togglePage === true) {
-        setTogglePage(false)
-        
-      }
-      else {
-        setTogglePage(true)
-        
-      }
+  else if ((currency1Code == "") || (currency2Code == "")) {
+    alert("Please click on the second currency.")
   }
+  else if (togglePage === true) {
+      setTogglePage(false)
+  }
+  else if (togglePage === false) {
+      setTogglePage(true)
+  }
+  else console.log('error')
+  
 }
 
 const goBack = () => {
@@ -62,26 +63,35 @@ const goBack = () => {
 }
 
 const getAmount = (e) => {
-  const amount = e.target.value
-  console.log(amount)
-  setRequestedAmount(amount)
+   setRequestedAmount(e.target.value)
 }
 
   return (
-    <div>            
+    <div id="main">            
       {
         togglePage ? (
-          <div>
+          <div className="contain">
           Please click on two currency buttons to convert the first into the second one. Enter a money amount below (optional).<br/>
-          <input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount}/>
+          $<input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount} /> - <button onClick={togglePages}>CONVERT</button>
+
           <DisplayButtons anyButtonClick={anyButtonClick} />
+
+          
+
+            <div className="dashboard">
+                <div className="choice1">CHOICE 1 SELECTED: {currency1Code}</div>
+                <div className="choice2">CHOICE 2 SELECTED: {currency2Code}</div>
+                <div className="amount">MONETARY AMOUNT CHOSEN: ${requestedAmount}</div>
+            </div>          
+
           <button onClick={clearValues}>CLEAR VALUES</button>
-          <button onClick={togglePages}>CONVERT</button>
           </div>
         )
         :
         (          
-          <ShowConversion requestedAmount={requestedAmount} currency1Object={currency1Object} currency2Object={currency2Object} currency1Code={currency1Code} currency2Code={currency2Code} goBack={goBack} /> 
+          <div className="contain">
+            <ShowConversion requestedAmount={requestedAmount} currency1Object={currency1Object} currency2Object={currency2Object} currency1Code={currency1Code} currency2Code={currency2Code} goBack={goBack} /> 
+          </div>
         )
       }
     </div>
