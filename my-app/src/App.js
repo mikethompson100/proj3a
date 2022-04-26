@@ -3,10 +3,12 @@ import axios from 'axios';
 import { useState } from 'react'
 import { BASE_URL, API_KEY } from './components/Global'
 import DisplayButtons from './components/DisplayButtons'
+import ShowConversion from './components/ShowConversion'
 
 function App() {
   const [currency1, setCurrency1] = useState("")  
   const [currency2, setCurrency2] = useState("")
+  const [togglePage, setTogglePage] = useState(true)
 
   async function anyButtonClick(e) {  
       if ((currency1 !== "") && (currency2 !== "")) {
@@ -14,26 +16,56 @@ function App() {
       }
       else if (currency1 === "") {
         setCurrency1(e.target.getAttribute("index"))
-        const res = await axios.get(`${BASE_URL}/${API_KEY}/latest/${currency1}`)
+        await axios.get(`${BASE_URL}/${API_KEY}/latest/${currency1}`)
       }
       else if (currency2 === "") {
         setCurrency2(e.target.getAttribute("index"))
-        const res = await axios.get(`${BASE_URL}/${API_KEY}/latest/${currency2}`)
+        await axios.get(`${BASE_URL}/${API_KEY}/latest/${currency2}`)
       }
-      else alert("FALL THROUGH?")    
+      
     } 
 
 const clearValues = () => {
   setCurrency1("")
   setCurrency2("")
+}
 
+const togglePages = () => {
+  if ((currency1 == "") && (currency2 == "")) {
+    alert("Please click on two currencies.")
+  }
+  else {
+      if (togglePage === true) {
+        setTogglePage(false)
+        
+      }
+      else {
+        setTogglePage(true)
+        
+      }
+  }
+}
+
+const goBack = () => {
+  setTogglePage(true)
+  clearValues()
 }
 
   return (
-    <div>
-      <DisplayButtons anyButtonClick={anyButtonClick} /><button onClick={clearValues}>CLEAR VALUES</button>
-      <br/>
-      <button>CONVERT</button>      
+    <div>            
+      {
+        togglePage ? (
+          <div>
+          <DisplayButtons anyButtonClick={anyButtonClick} />
+          <button onClick={clearValues}>CLEAR VALUES</button>
+          <button onClick={togglePages}>CONVERT</button>
+          </div>
+        )
+        :
+        (          
+          <ShowConversion currency1={currency1} currency2={currency2} goBack={goBack} />
+        )
+      }
     </div>
   );
 }
