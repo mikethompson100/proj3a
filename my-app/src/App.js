@@ -6,32 +6,40 @@ import DisplayButtons from './components/DisplayButtons'
 import ShowConversion from './components/ShowConversion'
 
 function App() {
-  const [currency1, setCurrency1] = useState("")  
-  const [currency2, setCurrency2] = useState("")
+  const [currency1Code, setCurrency1Code] = useState("")  
+  const [currency2Code, setCurrency2Code] = useState("")
+  const [currency1Object, setCurrency1Object] = useState([])  
+  const [currency2Object, setCurrency2Object] = useState([])
   const [togglePage, setTogglePage] = useState(true)
 
   async function anyButtonClick(e) {  
-      if ((currency1 !== "") && (currency2 !== "")) {
+      if ((currency1Code !== "") && (currency2Code !== "")) {
         alert("You already have both currencies. Please hit the CONVERT button to perform the conversion or the CLEAR VALUES button to start over.")
       }
-      else if (currency1 === "") {
-        setCurrency1(e.target.getAttribute("index"))
-        await axios.get(`${BASE_URL}/${API_KEY}/latest/${currency1}`)
+      else if (currency1Code === "") {
+        const code = e.target.getAttribute("index")
+        setCurrency1Code(code)
+        const object1 = await axios.get(`${BASE_URL}/${API_KEY}/latest/${code}`)
+        setCurrency1Object(object1)
       }
-      else if (currency2 === "") {
-        setCurrency2(e.target.getAttribute("index"))
-        await axios.get(`${BASE_URL}/${API_KEY}/latest/${currency2}`)
+      else if (currency2Code === "") {
+        const code = e.target.getAttribute("index")
+        setCurrency2Code(code)
+        const object2 = await axios.get(`${BASE_URL}/${API_KEY}/latest/${code}`)
+        setCurrency2Object(object2)
       }
       
     } 
 
 const clearValues = () => {
-  setCurrency1("")
-  setCurrency2("")
+  setCurrency1Code("")
+  setCurrency2Code("")
+  setCurrency1Object([])
+  setCurrency2Object([])
 }
 
 const togglePages = () => {
-  if ((currency1 == "") && (currency2 == "")) {
+  if ((currency1Code == "") && (currency2Code == "")) {
     alert("Please click on two currencies.")
   }
   else {
@@ -63,7 +71,7 @@ const goBack = () => {
         )
         :
         (          
-          <ShowConversion currency1={currency1} currency2={currency2} goBack={goBack} />
+          {/* <ShowConversion currency1={currency1} currency2={currency2} goBack={goBack} /> */}
         )
       }
     </div>
