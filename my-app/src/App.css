@@ -41,7 +41,7 @@ span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; t
 }
 
 #toolTipContainer { left: 0; position: relative; }
-
+#requestedAmount { color: red; font-weight: bold; }
 
 
 
