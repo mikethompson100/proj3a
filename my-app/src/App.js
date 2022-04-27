@@ -66,6 +66,8 @@ const getAmount = (e) => {
    setRequestedAmount(e.target.value)
 }
 
+const myStyle= { backgroundImage:`url("bg.jpg")` };
+
   return (
     <div id="main">            
       {
@@ -244,7 +246,7 @@ const getAmount = (e) => {
             </div>
           <div className="clearValues">
             <button onClick={clearValues}>CLEAR VALUES</button></div>
-            
+
           Please click on two currency buttons to convert the first into the second one.<br/><br/> 
           Enter a money amount below (optional, default is 1).<br/>
           $<input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount} /> - <button onClick={togglePages}>CONVERT</button>
@@ -260,7 +262,7 @@ const getAmount = (e) => {
         )
         :
         (          
-          <div className="contain">
+          <div id="showConv" className="contain" style={myStyle}>
             <ShowConversion requestedAmount={requestedAmount} currency1Object={currency1Object} currency2Object={currency2Object} currency1Code={currency1Code} currency2Code={currency2Code} goBack={goBack} /> 
           </div>
         )

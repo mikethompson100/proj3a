@@ -1,8 +1,8 @@
 body { background-color: green; }
-#showConversion { margin: 5px 0 30px 0 }
+#showConversion { margin: 5px 0 30px 0; padding: 20px; background-color:rgba(255,255,255,0.8);border: 1px solid #000; }
 .dashboard { background-color: #fff; border: 3px solid black; font-size: 1em; margin: 10px 0; padding: 0 10px; line-height: 35px; }
 #main { width: 90%; margin: 20px auto; }
-.contain { border: 5px #000 solid; padding: 20px; background-color: #e6f9dc; }
+.contain { border: 5px #000 solid; padding: 20px; background-color: #e6f9dc; width: 80%; height: 500px; }
 input { margin: 3px; border: 3px solid #000; }
 span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; text-decoration: underline; }
 .clearValues { float: right; }
@@ -45,8 +45,7 @@ span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; t
 #toolTipContainer { left: 0; position: relative; }
 #requestedAmount { color: red; font-weight: bold; }
 
-
-
+#showConv { background-size: cover; background-repeat: no-repeat; }
 
 
 
