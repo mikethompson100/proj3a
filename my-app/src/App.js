@@ -73,12 +73,14 @@ const myStyle= { backgroundImage:`url("bg.jpg")` };
       {
         togglePage ? (
           <div className="contain">
+            <a href="https://www.exchangerate-api.com/">Powered by ExchangeRate-API</a>
             <div id="toolTipContainer">
             <div className="tooltip">Legend
               <span className="tooltiptext">  
-              We support all 161 commonly circulating world currencies listed below. These cover 99% of all UN recognized states and territories.		
-              
-              Currency Code	Currency Name	Country<br/><br/>
+              We support all 161 commonly circulating world currencies listed below. <br/>
+              These cover 99% of all UN recognized states and territories.		
+              <br/><br/>
+              Currency Code	- Currency Name	- Country<br/><br/>
                   
               AED	- UAE Dirham	- United Arab Emirates<br/>
               AFN	- Afghan Afghani	- Afghanistan<br/>
