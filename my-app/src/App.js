@@ -41,10 +41,10 @@ const clearValues = () => {
 }
 
 const togglePages = () => {
-  if ((currency1Code == "") && (currency2Code == "") ) {
+  if ((currency1Code === "") && (currency2Code === "") ) {
     alert("Please click on two currencies.")
   }
-  else if ((currency1Code == "") || (currency2Code == "")) {
+  else if ((currency1Code === "") || (currency2Code === "")) {
     alert("Please click on the second currency.")
   }
   else if (togglePage === true) {
@@ -72,8 +72,8 @@ const getAmount = (e) => {
         togglePage ? (
           <div className="contain">
             <div id="toolTipContainer">
-            <div class="tooltip">Legend
-              <span class="tooltiptext">  
+            <div className="tooltip">Legend
+              <span className="tooltiptext">  
               We support all 161 commonly circulating world currencies listed below. These cover 99% of all UN recognized states and territories.		
               
               Currency Code	Currency Name	Country<br/><br/>
@@ -243,14 +243,14 @@ const getAmount = (e) => {
             </div>
             </div>
           <div className="clearValues"><button onClick={clearValues}>CLEAR VALUES</button></div>
-          Please click on two currency buttons to convert the first into the second one.<br/> 
+          Please click on two currency buttons to convert the first into the second one.<br/><br/> 
           Enter a money amount below (optional, default is 1).<br/>
           $<input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount} /> - <button onClick={togglePages}>CONVERT</button>
 
           <div className="dashboard">
                 <div className="choice1">Choice 1 selected:&nbsp;&nbsp;<span className="b">{currency1Code}</span></div>
                 <div className="choice2">Choice 2 selected:&nbsp;&nbsp;<span className="b">{currency2Code}</span></div>
-                <div className="amount">Monetary amount chosen: ${requestedAmount}</div>
+                <div className="amount">Monetary amount chosen: $<span className="b">{requestedAmount}</span></div>
             </div>          
           
           <DisplayButtons anyButtonClick={anyButtonClick} />

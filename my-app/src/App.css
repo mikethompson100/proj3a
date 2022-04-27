@@ -18,6 +18,7 @@ span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; t
   left: 0;
   display: inline-block;
   border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  font-size: 10px;
 }
 
 /* Tooltip text */
@@ -29,6 +30,7 @@ span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; t
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
+  font-size: 18px;
  
   /* Position the tooltip text - see examples below! */
   position: absolute;
