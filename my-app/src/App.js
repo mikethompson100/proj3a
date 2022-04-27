@@ -240,7 +240,7 @@ const myStyle= { backgroundImage:`url("bg.jpg")` };
               YER	- Yemeni Rial	- Yemen<br/>
               ZAR	- South African Rand	- South Africa<br/>
               ZMW	- Zambian Kwacha	- Zambia<br/>
-              ZWL	- Zimbabwean Dollar	- Zimbabwe<br/>    
+              ZWL	- Zimbabwean Dollar	- Zimbabwe    
               </span>
             </div>
             </div>
