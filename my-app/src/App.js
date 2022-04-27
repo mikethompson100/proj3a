@@ -71,6 +71,7 @@ const myStyle= { backgroundImage:`url("bg.jpg")` };
       {
         togglePage ? (
           <div className="contain">
+            <h2>CURRENCY CONVERTER</h2>
             <a href="https://www.exchangerate-api.com/">Powered by ExchangeRate-API</a>
             <div id="toolTipContainer">
             <div className="tooltip">Legend
