@@ -242,7 +242,9 @@ const getAmount = (e) => {
               </span>
             </div>
             </div>
-          <div className="clearValues"><button onClick={clearValues}>CLEAR VALUES</button></div>
+          <div className="clearValues">
+            <button onClick={clearValues}>CLEAR VALUES</button></div>
+            
           Please click on two currency buttons to convert the first into the second one.<br/><br/> 
           Enter a money amount below (optional, default is 1).<br/>
           $<input type="text" id="requestedAmount" name="requestedAmount" onChange={getAmount} /> - <button onClick={togglePages}>CONVERT</button>
