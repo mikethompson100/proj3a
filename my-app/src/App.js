@@ -28,8 +28,7 @@ function App() {
         setCurrency2Code(code)
         const object2 = await axios.get(`${BASE_URL}/${API_KEY}/latest/${code}`)
         setCurrency2Object(object2)
-      }
-      
+      }      
     } 
 
 const clearValues = () => {
@@ -53,8 +52,7 @@ const togglePages = () => {
   else if (togglePage === false) {
       setTogglePage(true)
   }
-  else console.log('error')
-  
+  else console.log('error')  
 }
 
 const goBack = () => {
@@ -247,7 +245,7 @@ const myStyle= { backgroundImage:`url("bg.jpg")` };
             </div>
             </div>
           <div className="clearValues">
-            <button onClick={clearValues}>CLEAR VALUES</button></div>
+          <button onClick={clearValues}>CLEAR VALUES</button></div>
 
           Please click on two currency buttons to convert the first into the second one.<br/><br/> 
           Enter a money amount below (optional, default is 1).<br/>
