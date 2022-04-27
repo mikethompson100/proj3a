@@ -5,7 +5,7 @@ function ShowConversion(props) {
     
     return (
       <div id="showConversion">  
-         ${props.requestedAmount} in {props.currency1Code} converts into ${conversionFinal} in {props.currency2Code}<br/>
+         ${props.requestedAmount} in {props.currency1Code} converts into ${conversionFinal} in {props.currency2Code}<br/><br/>
         <button onClick={props.goBack}>GO BACK</button> 
       </div>
     );

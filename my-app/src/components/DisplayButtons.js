@@ -10,8 +10,7 @@ function DisplayButtons(props) {
         useEffect(() => {
             async function fetchData() {
             const receive = await axios.get(`${BASE_URL}/${API_KEY}/latest/USD`)
-            const res = Object.keys(receive.data.conversion_rates);
-            console.log(res)
+            const res = Object.keys(receive.data.conversion_rates);            
             setArrayMembers(res)
             }
             fetchData()
