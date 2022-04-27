@@ -8,7 +8,6 @@ input { margin: 3px; border: 3px solid #000; }
 span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; text-decoration: underline; }
 .clearValues { float: right; }
 
-/* Tooltip container */
 .tooltip {
   text-decoration: underline;
   background-color: maroon;
@@ -18,7 +17,7 @@ span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; t
   position: relative;
   left: 0;
   display: inline-block;
-  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  border-bottom: 1px dotted black; 
   font-size: 10px;
 }
 
@@ -33,12 +32,10 @@ span.b { font-weight: bold; color: red; padding-left: 3px; padding-right: 3px; t
   border-radius: 6px;
   font-size: 18px;
  
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }

@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import { useState, useEffect } from 'react'
 import { BASE_URL, API_KEY } from './Global'
